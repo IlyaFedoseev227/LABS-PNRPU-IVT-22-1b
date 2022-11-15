@@ -8,6 +8,7 @@
 //В) Пустой квадрат со стороной N. В каждом из вариантов задать требования к минимальному N.
 
 #include <iostream>
+#include <cmath>
 
 int main()
 {
@@ -15,7 +16,7 @@ int main()
     
     start:
     float n;
-    int vsegoZvezd;
+    int storona;
     int vibor;
     char zvezda = '*';
     char probel = ' ';
@@ -30,7 +31,7 @@ int main()
     }
 
     std::cout << "Что тебе нужно?\n" 
-        "1) Квадрат в котором ВСЕГО N звездочек.(если введено нечетное N, то округление будет в меньшую сторону\n"
+        "1) Квадрат в котором ВСЕГО N звездочек.\n"
         "2) Заполненный квадрат со стороной N.\n"
         "3) Пустой квадрат со стороной N." << std::endl;
     std::cin >> vibor;
@@ -43,13 +44,13 @@ int main()
 
     switch (vibor)
     {
-        case 1: // НЕ РАБОТАЕТ!
-            vsegoZvezd = n / 3;
-            for (int i = 0; i < vsegoZvezd; i++)
+        case 1:
+            storona = sqrt(n);
+            for (int i = 0; i < storona; i++)
             {
-                for (int j = 0; j < vsegoZvezd; j++)
+                for (int j = 0; j < storona; j++)
                 {
-                    std::cout << zvezda;
+                    std::cout << "* ";
                 }
                 std::cout << std::endl;
             }
@@ -59,7 +60,7 @@ int main()
             {
                 for (int j = 0; j < n; j++)
                 {
-                    std::cout << zvezda;
+                    std::cout << "* ";
                 }
                 std::cout << std::endl;
             }
@@ -67,13 +68,13 @@ int main()
         case 3:
             for (int i = 0; i < n; i++)
             {
-                std::cout << zvezda;
+                std::cout << "* ";
             }
             std::cout << std::endl;
             for (int i = 0; i < n - 2; i++)
             {
                 std::cout << zvezda;
-                for (int j = 0; j < n - 2; j++)
+                for (int j = 0; j < n*2 - 3; j++)
                 {
                     std::cout << probel;
                 }
@@ -82,7 +83,7 @@ int main()
             }
             for (int i = 0; i < n; i++)
             {
-                std::cout << zvezda;
+                std::cout << "* ";
             }
             std::cout << std::endl;
             break;
