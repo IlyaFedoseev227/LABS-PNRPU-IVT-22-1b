@@ -23,18 +23,14 @@ int main()
     {
         std::cin >> num;
 
-        if (flag == false)
+        if ((flag == false) and (num != 0))
         {
             flag = true;
             chislo = num;
         }
     }
 
-    if (chislo == 0)
-    {
-        std::cout << "0 - самое раннее число" << std::endl;
-    }
-    else if (chislo > 0)
+    if (chislo > 0)
     {
         std::cout << "Cамое раннее число - положительное" << std::endl;
     }
