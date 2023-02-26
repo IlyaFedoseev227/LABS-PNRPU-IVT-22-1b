@@ -2,15 +2,15 @@
 #include <string>
 #include <stdarg.h>
 float mult(int k, ...){
-	float s = 1;
-	va_list fack;
-	va_start(fack, k);
+	float sum = 1;
+	va_list param;
+	va_start(param, k);
 	for (int i = 0; i < k; i++){
-	     float num = va_arg(fack, double);
-		 s *= num;
+	     float num = va_arg(param, double);
+		 sum *= num;
 	}
-	va_end(fack);
-	return s;
+	va_end(param);
+	return sum;
 }
 int main(){
 	std::cout << "\nSum(2, 4, 6) = " << mult(3, 44.5f, 2.2f, 2.3f);
