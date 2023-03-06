@@ -35,8 +35,7 @@ void bsort(int arr[], int dlina) {
     }
 }
 
-int main()
-{
+int main() {
     int arr[10]{-23,4,7,-1,29,-29,45,69,5,10};
     bsort(arr, 10);
     for (int i = 0; i < 10; i++) std::cout << arr[i] << "  ";
