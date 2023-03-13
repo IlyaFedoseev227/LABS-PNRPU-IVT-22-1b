@@ -17,7 +17,7 @@ void qsort(int* a, int dlina) {
     if (i < dlina) qsort(&a[i], dlina - i);
 }
 
-void main() {
+int main() {
     int arr[10]{ 4,7,-3,-45,2,110,-1,63,59,3 };
     qsort(arr, 10);
     for (int i = 0; i < 10; i++) std::cout << arr[i] << "  ";
