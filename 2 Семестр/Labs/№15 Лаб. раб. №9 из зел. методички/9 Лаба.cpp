@@ -19,31 +19,46 @@ int main() {
     fileIn.open("F1.txt");
     std::getline(fileIn, strFromFile);
 
-    std::cout << strFromFile << std::endl;
     fileIn.close();
 
 	bool flagA = false;
 	std::string slovo = "";
 	strFromFile += ' ';
-	std::cout << strFromFile << std::endl;
+
+	std::ofstream f2;
+	f2.open("F2.txt");
+
 	for (int i = 0; i < std::string(strFromFile).length(); i++) {
 		if (((strFromFile[i] == 'A') or (strFromFile[i] == 'a') or flagA) and (strFromFile[i] != ' ')) {
 			flagA = true;
 			slovo.insert(slovo.length(), 1, strFromFile[i]);
 		}
 		else {
-			if (count >= max) {
-				max = count;
-				big_slovo = slovo;
-			}
-			if (count <= min) {
-				min = count;
-				little_slovo = slovo;
-			}
-			count = 0;
+			flagA = false;
+			f2 << slovo;
 			slovo = " ";
 		}
 	}
+
+	f2.close();
+	strFromFile = "";
+
+	int count = 0;
+	std::ifstream colvoWordsFromF2;
+	colvoWordsFromF2.open("F2.txt");
+	std::getline(colvoWordsFromF2, strFromFile);
+
+	for (int i = 0; i < std::string(strFromFile).length(); i++) {
+		if ((strFromFile[i] == 'A') or (strFromFile[i] == 'a')) {
+			count++;
+			//flagA = true;
+			//slovo.insert(slovo.length(), 1, strFromFile[i]);
+		}
+	}
+
+	colvoWordsFromF2.close();
+
+	std::cout << "Words sum: " << count << std::endl;
 
     return 0;
 }
