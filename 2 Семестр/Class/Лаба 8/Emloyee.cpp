@@ -1,38 +1,38 @@
-#include "Student.h"
+#include "Emloyee.h"
 
-Student::Student() :Person() {
+Emloyee::Emloyee() :Person() {
     rating = 0;
 }
 
-Student::Student(std::string str, int t, float r) : Person(str, t) {
+Emloyee::Emloyee(std::string str, int t, float r) : Person(str, t) {
     rating = r;
 }
 
-Student::Student(const Student& stud) {
-    name = stud.name;
-    age = stud.age;
-    rating = stud.rating;
+Emloyee::Emloyee(const Emloyee& em) {
+    name = em.name;
+    age = em.age;
+    rating = em.rating;
 }
 
-Student& Student::operator=(const Student& stud) {
-    if (&stud == this) { return *this; }
-    name = stud.name;
-    age = stud.age;
-    rating = stud.rating;
+Emloyee& Emloyee::operator=(const Emloyee& em) {
+    if (&em == this) { return *this; }
+    name = em.name;
+    age = em.age;
+    rating = em.rating;
     return *this;
 }
 
-void Student::Show() {
-    std::cout << "This student is called " << name << std::endl;
-    std::cout << "And this student is " << age << " old." << std::endl;
-    std::cout << "Moreover, this student has " << rating << " rating" << std::endl;
+void Emloyee::Show() {
+    std::cout << "This Emloyee is called " << name << std::endl;
+    std::cout << "And this Emloyee is " << age << " old." << std::endl;
+    std::cout << "Moreover, this Emloyee has " << rating << " rating" << std::endl;
 }
 
-void Student::Input() {
-    std::cout << "This student is called " << std::endl;
+void Emloyee::Input() {
+    std::cout << "This Emloyee is called " << std::endl;
     std::cin >> name;
-    std::cout << "And this student age is " << std::endl;
+    std::cout << "And this Emloyee age is " << std::endl;
     std::cin >> age;
-    std::cout << "And this student has rating of " << std::endl;
+    std::cout << "And this Emloyee has rating of " << std::endl;
     std::cin >> rating;
 }

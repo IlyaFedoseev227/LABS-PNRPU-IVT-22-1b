@@ -1,8 +1,8 @@
 #pragma once
-#include "list.h"
+#include "Vector.h"
 #include "Event.h"
 
-class Dialog :public List {
+class Dialog :public Vector {
 protected:
     int EndState;
 
